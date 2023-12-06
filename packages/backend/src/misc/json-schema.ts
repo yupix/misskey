@@ -35,7 +35,7 @@ import { packedQueueCountSchema } from '@/models/json-schema/queue.js';
 import { packedGalleryPostSchema } from '@/models/json-schema/gallery-post.js';
 import { packedEmojiDetailedSchema, packedEmojiSimpleSchema } from '@/models/json-schema/emoji.js';
 import { packedFlashSchema } from '@/models/json-schema/flash.js';
-import { packedAnnouncementSchema } from '@/models/json-schema/announcement.js';
+import { packedAnnouncementDetailedSchema, packedAnnouncementSchema } from '@/models/json-schema/announcement.js';
 import { packedSigninSchema } from '@/models/json-schema/signin.js';
 import { packedRoleLiteSchema, packedRoleSchema } from '@/models/json-schema/role.js';
 
@@ -50,6 +50,7 @@ export const refs = {
 
 	UserList: packedUserListSchema,
 	Announcement: packedAnnouncementSchema,
+	AnnouncementDetailed: packedAnnouncementDetailedSchema,
 	App: packedAppSchema,
 	Note: packedNoteSchema,
 	NoteReaction: packedNoteReactionSchema,

@@ -2,8 +2,8 @@
 /* eslint @typescript-eslint/no-explicit-any: 0 */
 
 /*
- * version: 2023.12.0-beta.1
- * generatedAt: 2023-12-04T11:17:51.997Z
+ * version: 2023.12.0-beta.2
+ * generatedAt: 2023-12-06T07:21:07.371Z
  */
 
 /**
@@ -3363,12 +3363,39 @@ export type components = {
       text: string;
       title: string;
       imageUrl: string | null;
-      icon: string;
-      display: string;
+      /** @enum {string} */
+      icon: 'info' | 'warning' | 'error' | 'success';
+      /** @enum {string} */
+      display: 'normal' | 'banner' | 'dialog';
       needConfirmationToRead: boolean;
       silence: boolean;
       forYou: boolean;
       isRead?: boolean;
+    };
+    AnnouncementDetailed: {
+      /**
+       * Format: id
+       * @example xxxxxxxxxx
+       */
+      id: string;
+      /** Format: date-time */
+      createdAt: string;
+      /** Format: date-time */
+      updatedAt: string | null;
+      text: string;
+      title: string;
+      imageUrl: string | null;
+      /** @enum {string} */
+      icon: 'info' | 'warning' | 'error' | 'success';
+      /** @enum {string} */
+      display: 'normal' | 'banner' | 'dialog';
+      needConfirmationToRead: boolean;
+      silence: boolean;
+      isActive: boolean;
+      forExistingUsers: boolean;
+      /** Format: id */
+      userId: string | null;
+      reads: number;
     };
     App: {
       id: string;
@@ -4667,20 +4694,7 @@ export type operations = {
       /** @description OK (with results) */
       200: {
         content: {
-          'application/json': {
-            /**
-             * Format: id
-             * @example xxxxxxxxxx
-             */
-            id: string;
-            /** Format: date-time */
-            createdAt: string;
-            /** Format: date-time */
-            updatedAt: string | null;
-            title: string;
-            text: string;
-            imageUrl: string | null;
-          };
+          'application/json': components['schemas']['AnnouncementDetailed'];
         };
       };
       /** @description Client error */
@@ -4792,21 +4806,7 @@ export type operations = {
       /** @description OK (with results) */
       200: {
         content: {
-          'application/json': ({
-              /**
-               * Format: id
-               * @example xxxxxxxxxx
-               */
-              id: string;
-              /** Format: date-time */
-              createdAt: string;
-              /** Format: date-time */
-              updatedAt: string | null;
-              text: string;
-              title: string;
-              imageUrl: string | null;
-              reads: number;
-            })[];
+          'application/json': components['schemas']['AnnouncementDetailed'][];
         };
       };
       /** @description Client error */

@@ -307,6 +307,9 @@ type AnnouncementCreated = {
 };
 
 // @public (undocumented)
+type AnnouncementDetailed = components['schemas']['AnnouncementDetailed'];
+
+// @public (undocumented)
 type AnnouncementsRequest = operations['announcements']['requestBody']['content']['application/json'];
 
 // @public (undocumented)
@@ -1510,6 +1513,7 @@ declare namespace entities {
         User,
         UserList,
         Announcement,
+        AnnouncementDetailed,
         App,
         Note,
         NoteReaction,
